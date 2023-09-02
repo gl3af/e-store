@@ -11,7 +11,7 @@ export default async function Home() {
     <Main>
       <Container>
         <section className="flex flex-col gap-6 justify-center items-center h-[calc(100vh-72px)] text-center">
-          <PageTitle title="Your favorite digital store" />
+          <PageTitle title="Your favorite digital store"/>
           {/*<h1 className="text-2xl font-bold text-center">Your favorite digital store</h1>*/}
           <Button asChild size="lg">
             <Link href="/categories">Go to products</Link>
@@ -22,11 +22,11 @@ export default async function Home() {
           className="grid grid-cols-1 sm:grid-cols-[1.5fr_1fr] md:grid-cols-2 gap-10 text-center"
         >
           <div className="relative aspect-square">
-          <Image
-            fill
-            src="/about.png"
-            alt="About us"
-          />
+            <Image
+              fill
+              src="/about.png"
+              alt="About us"
+            />
           </div>
           <div className="flex flex-col gap-4 justify-start items-center text-center sm:text-left">
             <h2 className="text-3xl font-bold">About us</h2>
@@ -64,13 +64,13 @@ export default async function Home() {
               <p className="text-xl font-light">Lorem ipsum dolor sit amet.</p>
             </div>
           </div>
-        <div className="relative">
-          <Image
-            fill
-            src="/map.png"
-            alt="About us"
-          />
-        </div>
+          <div className="relative aspect-square">
+            <Image
+              fill
+              src="/map.png"
+              alt="About us"
+            />
+          </div>
         </section>
       </Container>
     </Main>
