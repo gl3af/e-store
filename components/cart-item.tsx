@@ -1,16 +1,20 @@
 "use client";
 
-import {CartItem} from "@/types";
+import { CartItem } from "@/types";
 import Image from "next/image";
 
-import { useAppDispatch} from "@/store/hooks";
-import {increaseAmount, decreaseAmount, removeItem} from "@/store/slices/cartSlice";
+import { useAppDispatch } from "@/store/hooks";
+import {
+  decreaseAmount,
+  increaseAmount,
+  removeItem,
+} from "@/store/slices/cartSlice";
 
-import {Button} from "@/components/ui/button";
-import {X} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 
-const CartItem = ({cartItem} : {cartItem: CartItem}) => {
-  const {item, amount} = cartItem;
+const CartItem = ({ cartItem }: { cartItem: CartItem }) => {
+  const { item, amount } = cartItem;
   const dispatch = useAppDispatch();
 
   return (
@@ -26,14 +30,16 @@ const CartItem = ({cartItem} : {cartItem: CartItem}) => {
       </div>
       <div className="flex flex-col gap-4 relative justify-center items-center px-4">
         <Button
-          className="absolute right-0 top-0 p-2 h-9 w-9"
+          className="absolute right-0 top-0 p-0.5 md:p-2 h-6 w-6 md:h-9 md:w-9"
           variant="outline"
           size="icon"
           onClick={() => dispatch(removeItem(cartItem))}
         >
-          <X />
+          <X className="w-full h-full" />
         </Button>
-        <h2 className="text-primary text-xl text-center lg:text-2xl font-bold">{item.title}</h2>
+        <h2 className="text-primary text-xl text-center lg:text-2xl font-bold">
+          {item.title}
+        </h2>
         <p className="text-xl font-semibold">${item.price}</p>
         <div className="flex gap-x-4 items-center">
           <Button
